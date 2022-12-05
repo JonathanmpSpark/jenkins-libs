@@ -1,5 +1,5 @@
 def build(Map params){
-	sh 'echo "Execute from dockerDefs.'
+	sh 'echo "Execute from dockerDefs."'
 //	sh "docker build -f ${params.Dockerfile} -t ${params.DockerImage} ${params.DockerContext}"
 }
 
