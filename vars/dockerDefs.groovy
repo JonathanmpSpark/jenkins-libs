@@ -1,12 +1,11 @@
-def build(Map params){
-	sh 'echo "Execute from dockerDefs."'
-//	sh "docker build -f ${params.Dockerfile} -t ${params.DockerImage} ${params.DockerContext}"
+def compose-build(Map params){
+	sh "IMAGE_TAG='${params.Tag}' docker-compose -f ${params.ComposeFile} build ${params.services}"
 }
 
-def push(Map params){
-	sh "docker push ${params.DockerImage}"
+def compose-up(Map params){
+	sh "IMAGE_TAG='${params.Tag}' docker-compose -f ${params.ComposeFile} up -d ${params.services}"
 }
 
-def test(Map params){
-	echo "My name is  ${params.Name}"
+def unittest(Map params){
+	sh "docker exec -i -u root ${params.service} bash -c pytest --html=/app/templates/pytest"
 }
