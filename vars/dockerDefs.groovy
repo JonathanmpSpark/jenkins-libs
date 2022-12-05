@@ -1,5 +1,7 @@
 def build(Map params){
-	ssh "echo 'execute from build funtion {params.name}'"
+	ssh "date"
+	ssh 'date'
+	ssh 'Execute from dockerDefs.'
 //	ssh "docker build -f ${params.Dockerfile} -t ${params.DockerImage} ${params.DockerContext}"
 }
 
