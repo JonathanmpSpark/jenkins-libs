@@ -8,3 +8,7 @@ def build(Map params){
 def push(Map params){
 	ssh "docker push ${params.DockerImage}"
 }
+
+def test(Map params){
+	ssh 'echo "HELLO WORLD!!!"'
+}
