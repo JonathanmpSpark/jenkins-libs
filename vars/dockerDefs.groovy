@@ -10,7 +10,6 @@ def unittest(Map params){
 	sh "docker exec -i -u root ${params.ContainerName} bash -c pytest --html=/app/templates/pytest"
 }
 
-
 def teamsNotification(Map params){
 	sh " docker run --rm deployment-notificator notificator.py ${params.WebHookKey} '${params.Message}'"
 }
