@@ -12,5 +12,5 @@ def unittest(Map params){
 
 
 def teamsNotification(Map params){
-	sh " docker run --rm deployment-notificator notificator.py ${params.WebHookKey} ${params.Message}"
+	sh " docker run --rm deployment-notificator notificator.py ${params.WebHookKey} '${params.Message}'"
 }
