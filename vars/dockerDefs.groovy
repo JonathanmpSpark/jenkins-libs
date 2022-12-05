@@ -1,5 +1,5 @@
 def build(Map params){
-	sh 'echo "Execute from dockerDefs. ${params.Name}"'
+	sh 'echo "Execute from dockerDefs.'
 //	sh "docker build -f ${params.Dockerfile} -t ${params.DockerImage} ${params.DockerContext}"
 }
 
@@ -8,5 +8,5 @@ def push(Map params){
 }
 
 def test(Map params){
-	sh 'echo "HELLO WORLD!!! ${params.Name}"'
+	sh 'echo HELLO WORLD!!! ${params.Name}'
 }
