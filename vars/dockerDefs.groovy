@@ -8,5 +8,5 @@ def push(Map params){
 }
 
 def test(Map params){
-	sh 'echo HELLO WORLD!!! ${params.Name}'
+	sh 'My name is  ${params.Name}'
 }
