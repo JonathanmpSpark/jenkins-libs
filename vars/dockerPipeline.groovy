@@ -31,11 +31,30 @@ def call(Map params){
 				}
 			}
 			
-			// stage('Unittest Stage'){
-			// 	dockerDefs.unitTest(
-			// 		UnitTestService: params.UnitTestService,
-			// 	)
-			// }
+			stage('Unittest Stage'){
+				steps {
+					script {
+						
+						if(params.UnitTestService){
+							echo "Si se mando el parametro y es: ${params.UnitTestService}!"
+							echo "Si se mando el parametro y es: ${params.UnitTestService}!"
+							echo "Si se mando el parametro y es: ${params.UnitTestService}!"
+							echo "Si se mando el parametro y es: ${params.UnitTestService}!"
+						}
+						else{
+							echo "el parametro UnitTestService esta vacio!"
+							echo "el parametro UnitTestService esta vacio!"
+							echo "el parametro UnitTestService esta vacio!"
+							echo "el parametro UnitTestService esta vacio!"
+							echo "el parametro UnitTestService esta vacio!"
+						}
+					
+						// dockerDefs.unitTest(
+						// 	UnitTestService: params.UnitTestService,
+						// )
+					}
+				}
+			}
 			
 			stage('Deploy Stage'){
 				steps {
