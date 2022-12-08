@@ -36,22 +36,11 @@ def call(Map params){
 					script {
 						
 						if(params.UnitTestService){
-							echo "Si se mando el parametro y es: ${params.UnitTestService}!"
-							echo "Si se mando el parametro y es: ${params.UnitTestService}!"
-							echo "Si se mando el parametro y es: ${params.UnitTestService}!"
-							echo "Si se mando el parametro y es: ${params.UnitTestService}!"
+							dockerDefs.unitTest(
+								UnitTestService: params.UnitTestService,
+							)
 						}
-						else{
-							echo "el parametro UnitTestService esta vacio!"
-							echo "el parametro UnitTestService esta vacio!"
-							echo "el parametro UnitTestService esta vacio!"
-							echo "el parametro UnitTestService esta vacio!"
-							echo "el parametro UnitTestService esta vacio!"
-						}
-					
-						// dockerDefs.unitTest(
-						// 	UnitTestService: params.UnitTestService,
-						// )
+						
 					}
 				}
 			}
