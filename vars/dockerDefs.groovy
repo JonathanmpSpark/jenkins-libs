@@ -11,6 +11,7 @@ def pruneImages(){
 }
 
 def unitTest(Map params){
+	sh "mkdir $HOME/pytest &> /dev/null"
 	sh "docker run --rm --name unittest -u root -v $HOME/pytest:/app/templates/pytest -e DJANGO_SETTINGS_MODULE=config.settings.staging --entrypoint pytest ${params.UnitTestImage} '--html=/app/templates/pytest/report.html'"
 	sh "docker cp $HOME/pytest/report.html api:/app/templates/pytest/"
 	
