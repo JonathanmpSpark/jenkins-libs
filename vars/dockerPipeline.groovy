@@ -30,9 +30,9 @@ def call(Map params){
 				steps {
 					script {
 						
-						if(params.UnitTestService){
+						if(params.UnitTestImage){
 							dockerDefs.unitTest(
-								UnitTestService: params.UnitTestService,
+								UnitTestImage: params.UnitTestImage,
 							)
 						}
 						
