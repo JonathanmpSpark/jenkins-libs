@@ -6,17 +6,19 @@ def call(Map params){
 			dockerhub_credentials = 'ripe-dockerhub-credentials'
 		}
 		
-		stage('Github stage') {
-            steps {
-                git(
-                    url: 'https://github.com/sparktechsllc/DISC.git',
-                    credentialsId: 'jonathan-github-token',
-                    branch: params.GitBranch
-                )
-            }
-        }
+		
 		
 		stages{
+			stage('Github stage') {
+				steps {
+					git(
+						url: 'https://github.com/sparktechsllc/DISC.git',
+						credentialsId: 'jonathan-github-token',
+						branch: params.GitBranch
+					)
+				}
+            }
+			
 			stage('Build Stage'){
 				dockerDefs.composeBuild(
 					ComposeFile: params.ComposeFile,
