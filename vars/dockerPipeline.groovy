@@ -54,7 +54,7 @@ def call(Map params){
 							Tag: params.Tag,
 						)
 						
-						pruneImages()
+						dockerDefs.pruneImages()
 					}
 				}
 			}
