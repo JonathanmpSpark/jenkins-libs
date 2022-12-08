@@ -53,6 +53,8 @@ def call(Map params){
 							Service: params.Service,
 							Tag: params.Tag,
 						)
+						
+						pruneImages()
 					}
 				}
 			}
