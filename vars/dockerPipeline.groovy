@@ -5,9 +5,6 @@ def call(Map params){
 			dockerhub_repository = 'ripesparktechs/web'
 			dockerhub_credentials = 'ripe-dockerhub-credentials'
 		}
-		
-		
-		
 		stages{
 			stage('Github stage') {
 				steps {
@@ -18,7 +15,6 @@ def call(Map params){
 					)
 				}
             }
-			
 			stage('Build Stage'){
 				steps {
 					script{
@@ -30,7 +26,6 @@ def call(Map params){
 					}
 				}
 			}
-			
 			stage('Unittest Stage'){
 				steps {
 					script {
@@ -44,7 +39,6 @@ def call(Map params){
 					}
 				}
 			}
-			
 			stage('Deploy Stage'){
 				steps {
 					script{
@@ -53,7 +47,6 @@ def call(Map params){
 							Service: params.Service,
 							Tag: params.Tag,
 						)
-						
 						dockerDefs.pruneImages()
 					}
 				}
