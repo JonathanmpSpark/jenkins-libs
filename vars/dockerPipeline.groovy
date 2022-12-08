@@ -20,11 +20,13 @@ def call(Map params){
             }
 			
 			stage('Build Stage'){
-				dockerDefs.composeBuild(
-					ComposeFile: params.ComposeFile,
-					Service: params.Service,
-					Tag: params.Tag,
-				)
+				script{
+					dockerDefs.composeBuild(
+						ComposeFile: params.ComposeFile,
+						Service: params.Service,
+						Tag: params.Tag,
+					)
+				}
 			}
 			
 			// stage('Unittest Stage'){
@@ -34,11 +36,13 @@ def call(Map params){
 			// }
 			
 			stage('Deploy Stage'){
-				dockerDefs.composeUp(
-					ComposeFile: params.ComposeFile,
-					Service: params.Service,
-					Tag: params.Tag,
-				)
+				script{
+					dockerDefs.composeUp(
+						ComposeFile: params.ComposeFile,
+						Service: params.Service,
+						Tag: params.Tag,
+					)
+				}
 			}
 		}
 	}
