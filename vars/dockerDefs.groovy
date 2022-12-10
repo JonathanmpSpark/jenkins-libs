@@ -16,6 +16,14 @@ def unitTest(Map params){
 	//sh "docker cp $HOME/pytest/report.html api:/app/templates/pytest/"
 }
 
+def build(Map params){
+	sh "docker build -t ${params.Repo}:${params.Tag} ${params.Dockerfile}"
+}
+
+def push(Map params){
+	sh "docker push ${params.Repo}:${params.Tag}"
+}
+
 def teamsNotification(Map params){
 	sh " docker run --rm deployment-notificator notificator.py ${params.WebHookKey} '${params.Message}'"
 }
