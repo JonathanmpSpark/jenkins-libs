@@ -39,7 +39,7 @@ def call(Map params){
 					}
 				}
 			}
-			stage('Deploy Stage'){
+			stage('Deploy Stage Test'){
 				steps {
 					script{
 						if(!params.UnitTestImage){						
@@ -52,12 +52,7 @@ def call(Map params){
 						}
 					}
 				}
-			}
-			stage('Test stage') {
-				steps {
-					
-				}
-            }			
+			}		
 		}
 		
 		
