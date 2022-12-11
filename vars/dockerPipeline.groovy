@@ -39,10 +39,10 @@ def call(Map params){
 					}
 				}
 			}
-			stage('Deploy Stage Test'){
+			stage('Deploy Stage'){
 				steps {
 					script{
-						if(!params.UnitTestImage){						
+						if(params.UnitTestImage == ''){						
 							dockerDefs.composeUp(
 								ComposeFile: params.ComposeFile,
 								Service: params.Service,
