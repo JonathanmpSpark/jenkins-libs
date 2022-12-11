@@ -53,6 +53,11 @@ def call(Map params){
 					}
 				}
 			}
+			stage('Test stage') {
+				steps {
+					
+				}
+            }			
 		}
 		
 		
