@@ -3,9 +3,9 @@ def call(Map params){
 		environment {
             docker_image = ''
         }
-    
+        
         agent any
-    
+        
         stages {
             stage('Github stage') {
                 steps {
