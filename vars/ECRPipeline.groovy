@@ -20,10 +20,10 @@ def call(Map params){
             stage('Build Stage') {
                 steps {
                     script {
-                        echo "[+] ---> Building ${params.Dockerfile} ${params.Context} as ${params.Repo}:${params.Tag}"
+                        echo "[+] ---> Building ${params.Dockerfile} ${params.DockerfileContext} as ${params.Repo}:${params.Tag}"
                         docker_image = docker.build(
                             "${params.Repo}:${params.Tag}",
-                            "-f ${params.Dockerfile} ${params.Context}"
+                            "-f ${params.Dockerfile} ${params.DockerfileContext}"
                         )
                     }
                 }
