@@ -17,7 +17,7 @@ def unitTest(Map params){
 }
 
 def build(Map params){
-	sh "docker build -t ${params.Repo}:${params.Tag} ${params.Dockerfile} ${params.Context}"
+	sh "docker build -t ${params.Repo}:${params.Tag} -f ${params.Dockerfile} ${params.Context}"
 }
 
 def push(Map params){
