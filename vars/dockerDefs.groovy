@@ -7,7 +7,7 @@ def composeUp(Map params){
 }
 
 def pruneImages(){
-	sh "docker image prune -f"
+	sh "docker image prune -a -f"
 }
 
 def unitTest(Map params){
