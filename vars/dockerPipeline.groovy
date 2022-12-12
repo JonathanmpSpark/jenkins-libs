@@ -41,16 +41,16 @@ def call(Map params){
 			}
 			stage('Deploy Stage'){
 				steps {
-					script{					
+					script{
 						dockerDefs.composeUp(
 							ComposeFile: params.ComposeFile,
 							Service: params.Service,
 							Tag: params.Tag,
+						)
 						// dockerDefs.pruneImages()
-						}
 					}
 				}
-			}		
+			}
 		}
 		
 		
