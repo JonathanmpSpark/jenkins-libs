@@ -23,8 +23,7 @@ def call(Map params){
                         echo "[+] ---> Building ${params.Dockerfile} ${params.DockerfileContext} as ${params.Repo}:${params.Tag}"
                         docker_image = docker.build(
                             "${params.Repo}:${params.Tag}",
-                            "${params.Options}",
-                            "-f ${params.Dockerfile} ${params.DockerfileContext}"
+                            "${params.Options} -f ${params.Dockerfile} ${params.DockerfileContext}"
                         )
                     }
                 }
